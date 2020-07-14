@@ -1,0 +1,44 @@
+language: en
+
+#pipeline: supervised_embeddings
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CRFEntityExtractor
+  # BILOU_flag determines whether to use BILOU tagging or not.
+    BILOU_flag: True
+  # features to extract in the sliding window
+    features: [
+    ["low", "title", "upper"],
+    [
+      "bias",
+      "low",
+      "prefix5",
+      "prefix2",
+      "suffix5",
+      "suffix3",
+      "suffix2",
+      "upper",
+      "title",
+      "digit",
+      "pattern",
+    ],
+    ["low", "title", "upper"],
+  ]
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 100
+    #entity_recognition: False
+  - name: EntitySynonymMapper
+ 
+policies:
+  - name: MemoizationPolicy
+  - name: TEDPolicy
+  - name: FormPolicy
+  - name: MappingPolicy
+  - name: FallbackPolicy
