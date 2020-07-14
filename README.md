@@ -34,6 +34,7 @@ American
 South Indian 
 
 North Indian
+
 User: I’ll prefer Italian!
 
 **Average budget for two people:** Segment the price range (average budget for two people) into three price categories: 
@@ -41,9 +42,13 @@ lesser than 300, 300 to 700 and more than 700.
 The bot should ask the user to select one of the three price categories. For example:
 
 Bot: What price range are you looking at?
-**Lesser than Rs. 300 
+
+Lesser than Rs. 300 
+
 Rs. 300 to 700 
-More than 700**
+
+More than 700
+
 User: in range of 300 to 700
 
 **NLU training:** One can use rasa-nlu-trainer to create more training examples for entities and intents. Try using regex features and synonyms for extracting entities.
