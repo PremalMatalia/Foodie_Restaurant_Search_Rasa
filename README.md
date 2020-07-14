@@ -23,12 +23,17 @@ Your chatbot should provide results for tier-1 and tier-2 cities only, while for
 **Cuisine Preference:** Take the cuisine preference from the customer. The bot should list out the following six cuisine categories (Chinese, Mexican, Italian, American, South Indian & North Indian) and the customer can select any one out of that. Following is an example for the same:
 
 Bot: What kind of cuisine would you prefer?
-**Chinese 
+Chinese 
+
 Mexican 
+
 Italian 
+
 American 
+
 South Indian 
-North Indian**
+
+North Indian
 User: I’ll prefer Italian!
 
 **Average budget for two people:** Segment the price range (average budget for two people) into three price categories: 
